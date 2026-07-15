@@ -1,0 +1,36 @@
+name: Static Snapshot CI
+
+on:
+  schedule:
+    - cron: "2-57/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.repository }}-static-snapshot
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build token-free status page
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: master
+          token: ${{ secrets.GH_PAT || github.token }}
+
+      - name: Build status snapshot
+        run: node scripts/build-static-status.mjs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT || github.token }}
+          publish_dir: static-status
+          force_orphan: true
+          user_name: Upptime Bot
+          user_email: 73812536+upptime-bot@users.noreply.github.com
