@@ -2,6 +2,10 @@ owner: GeorgeSama-1
 repo: my-website-status
 user-agent: GeorgeSama-1
 
+# Public endpoints require no contextual secrets.
+secrets: []
+skipGeneratingWebsite: true
+
 sites:
   - name: George Hu Website
     url: https://geohu.com/
