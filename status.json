@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-11-14T15:42:49.962Z",
+  "services": [
+    {
+      "name": "George Hu Website",
+      "url": "https://geohu.com/",
+      "status": "up",
+      "code": 200,
+      "responseTime": 3093,
+      "lastChangedAt": "2026-11-14T02:48:09.469Z",
+      "uptimeDay": "100.00%",
+      "uptimeMonth": "100.00%",
+      "uptimeYear": "100.00%"
+    },
+    {
+      "name": "Website Health API",
+      "url": "https://geohu.com/api/health",
+      "status": "up",
+      "code": 200,
+      "responseTime": 2258,
+      "lastChangedAt": "2026-11-14T02:48:11.756Z",
+      "uptimeDay": "100.00%",
+      "uptimeMonth": "100.00%",
+      "uptimeYear": "100.00%"
+    }
+  ]
+}
